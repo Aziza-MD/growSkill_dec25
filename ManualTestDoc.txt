@@ -1,0 +1,340 @@
+1. Verification vs Validation
+Interview Answer
+
+Verification checks documents & design without executing code.
+Validation checks the actual product by executing test cases.
+
+Real-Time Example
+
+Verification → Reviewing BRD, wireframes before development starts.
+
+Validation → Testing the login functionality after developers build it.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Error → Human mistake (misunderstood requirement).
+
+Defect/Bug → Error found in the code.
+
+Failure → Defect appears when the software runs.
+
+Example
+
+A developer misunderstands “password must have a special character.”
+→ Writes wrong logic (error)
+→ Login rejects valid passwords (bug)
+→ User cannot log in (failure)
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Why is Testing Necessary?
+Interview Answer
+
+Because defects can cause business loss, financial impact, security risk, and customer dissatisfaction.
+
+Example
+
+A bug in a UPI payment app could result in incorrect transactions.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Testing vs Debugging
+
+Testing → Identifies defects (tester)
+
+Debugging → Fixes defects (developer)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Seven Testing Principles
+
+Give 3–4 in interview:
+
+Testing shows presence of defects
+
+Exhaustive testing is impossible
+
+Early testing saves cost
+
+Defect clustering
+
+Pesticide paradox
+
+Context-dependent
+
+Absence-of-errors fallacy
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Test Levels: Unit → Integration → System → UAT
+1. Unit Testing
+Testing individual components or functions in isolation to ensure each unit works correctly. Performed by developers.
+
+2. Integration Testing
+Testing how multiple units or modules work together. Focuses on interfaces, data flow, and interactions to catch issues between components.
+
+3. System Testing
+Testing the complete, integrated application as a whole to verify that it meets the functional and non-functional requirements. Performed in an environment close to production.
+
+4. UAT (User Acceptance Testing)
+Testing performed by end users or clients to confirm the system meets business needs and is ready for production. Focuses on real-world scenarios and usability.
+
+Real-Time Example (E-commerce App)
+
+Unit → API returns correct product details
+
+Integration → Add-to-cart + checkout work together
+
+System → End-to-end order placement
+
+UAT → Business validates discount rules
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Functional Testing
+
+What it checks:
+Whether the system does what it is supposed to do based on requirements.
+
+Focus:
+
+			Features
+
+			Business logic
+
+			User interactions
+
+			Input/output behavior
+
+			API behavior
+
+Examples:
+
+			Login works with valid credentials
+
+			Adding items to a shopping cart
+
+			Correct error messages on invalid input
+
+			API returns expected JSON
+
+			Database CRUD operations
+
+Types include:
+
+			Unit testing
+
+			Integration testing
+
+			System testing
+
+			UAT
+
+			Smoke / Sanity
+
+			Regression testing
+
+			Non-Functional Testing
+
+What it checks:
+How well the system performs under various conditions.
+
+Focus:
+
+			Quality attributes (performance, security, usability, etc.)
+
+			System behavior under load
+
+			Reliability and stability
+
+Examples:
+
+			Response times under load
+
+			Maximum number of concurrent users
+
+			App usability and accessibility
+
+			Security vulnerabilities
+
+			Recovery after failure
+
+Types include:
+
+Performance / Load / Stress testing
+
+			Security testing
+
+			Usability testing
+
+			Reliability testing
+
+			Compatibility testing
+
+			Scalability testing
+----------------------------------------------------------------------------------------------------------------------------------------
+✅ 1. Smoke Testing
+Definition:
+
+A quick check to ensure the basic and critical functionalities of the application are working in a new build.
+It's also called a build verification test.
+
+Real-Time Example:
+
+In an e-commerce application, after a new deployment, testers quickly check:
+
+Homepage loads
+
+Login works
+
+Product listing loads
+
+Add to cart works
+
+Checkout page opens
+
+If these fail → No need to continue testing.
+
+✅ 2. Sanity Testing
+Definition:
+
+A focused test done after minor changes to verify specific functionality works correctly without checking the entire application.
+
+Real-Time Example:
+
+If a defect in “Order Total Calculation” was fixed, sanity testing checks:
+
+Total is calculated correctly
+
+Tax is added properly
+
+Discounts apply correctly
+
+Only the impacted area is tested—nothing else.
+
+✅ 3. Regression Testing
+Definition:
+
+Re-testing previously working functionality to ensure that new changes did NOT break existing features.
+
+Real-Time Example:
+
+If a new feature “Apply Promo Code” is added, regression testing checks older features like:
+
+Add to cart
+
+Remove item
+
+Checkout
+
+Payment flow
+
+Order history
+
+Ensures old features still work perfectly.
+
+✅ 4. Retesting
+Definition:
+
+Re-executing test cases that previously failed to confirm the defect is fixed.
+
+Real-Time Example:
+
+If “Password Reset Email Not Sent” bug was fixed, testers recheck this exact feature only.
+
+✅ 5. Smoke vs Sanity vs Regression (Simple Difference)
+Type	Purpose	Scope	When Used
+Smoke	Check basic stability	Very shallow	After new build
+Sanity	Check specific fix/feature	Narrow & deep	After a bug fix
+Regression	Check old features still work	Wide & deep	After any change
+✅ 6. Performance Testing
+Definition:
+
+Testing system speed, stability, and scalability.
+
+Example:
+
+Checking if train-booking site responds within 3 seconds during peak load.
+
+✅ 7. Load Testing
+Definition:
+
+Testing how the system performs under expected normal load.
+
+Example:
+
+Checking if 50,000 users can attend an online exam at the same time.
+
+✅ 8. Stress Testing
+Definition:
+
+Testing system behavior at extreme loads until it breaks.
+
+Example:
+
+Flooding a banking app with 3x normal users to see where it crashes.
+
+✅ 9. Security Testing
+Definition:
+
+Ensuring the system is protected against attacks.
+
+Example:
+
+Checking SQL injection, password brute force, session hijacking.
+
+✅ 10. Usability Testing
+Definition:
+
+Checking how easy and intuitive the application is for users.
+
+Example:
+
+New users can order food in a delivery app within 3–4 clicks.
+
+✅ 11. Compatibility Testing
+Definition:
+
+Checking if the system works on different browsers, devices, OS.
+
+Example:
+
+Banking website works on Chrome, Firefox, Safari, Android, iOS.
+
+✅ 12. Exploratory Testing
+Definition:
+
+Testing without test cases—exploring the application freely.
+
+Example:
+
+Tester tries random actions on a ride-booking app to find unexpected bugs.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+10. Black-box Techniques
+Equivalence Partitioning
+
+Login age: 18–60
+Partitions: <18 invalid, 18–60 valid, >60 invalid
+
+Boundary Value Analysis
+
+Test: 17, 18, 60, 61
+
+11. White-box Testing
+
+Statement coverage
+
+Decision coverage
+
+Example
+
+Test branches in a discount calculation function.
+-------------------------------------------------------------------------------------------------
+14. Test Plan - Key Contents
+
+Scope
+
+Test approach
+
+Entry/exit criteria
+
+Schedule
+
+Risks
+--------------------------------------------------
+15. Defect Life Cycle
+
+New → Assigned → Open → Fixed → Retest → Closed
+--------------------------------------------------------------
